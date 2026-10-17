@@ -75,9 +75,9 @@ favbtnn.addEventListener("click", () => {
 
 function iconwhenplay(){
     ply.innerHTML = `
-    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path fill="currentColor" d="M8 3.5h1.5A1.5 1.5 0 0 1 11 5v14a1.5 1.5 0 0 1-1.5 1.5H8A1.5 1.5 0 0 1 6.5 19V5A1.5 1.5 0 0 1 8 3.5Zm6.5 0H16A1.5 1.5 0 0 1 17.5 5v14a1.5 1.5 0 0 1-1.5 1.5h-1.5A1.5 1.5 0 0 1 13 19V5a1.5 1.5 0 0 1 1.5-1.5Z"/>
-    </svg>
+<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path fill="currentColor" d="M7.3 2.8h2A1.4 1.4 0 0 1 10.7 4.2v15.6a1.4 1.4 0 0 1-1.4 1.4h-2A1.4 1.4 0 0 1 5.9 19.8V4.2a1.4 1.4 0 0 1 1.4-1.4Zm7.4 0h2a1.4 1.4 0 0 1 1.4 1.4v15.6a1.4 1.4 0 0 1-1.4 1.4h-2a1.4 1.4 0 0 1-1.4-1.4V4.2a1.4 1.4 0 0 1 1.4-1.4Z"/>
+</svg>
     `;
 }
 function iconwhenpause(){
@@ -421,12 +421,14 @@ lyricsbtnt.addEventListener("click", () => {
         rsect.classList.remove("hide");
         rsect.classList.add("view");
         lsectt.classList.remove("hide");
-        lyricsbtnt.querySelector("svg").classList.add("hide");
+        lyricsbtnt.querySelector("svg").classList.remove("hide");
     } else {
         rsect.classList.add("hide");
         rsect.classList.remove("view");
         lsectt.classList.add("hide");
-        lyricsbtnt.querySelector("svg").classList.remove("hide");
+        lyricsbtnt.querySelector("svg").classList.add("hide");
     }
 });
 flexxx();
+
+

@@ -366,7 +366,7 @@ button{
 
 .lyricssect {
     width: 80%;
-    height: 500px;
+    height: 600px;
     min-height: 0;
 
     white-space: normal;
@@ -429,9 +429,7 @@ button{
 
 /* lyricsbtntoggle */
 #lyricsbtntoggle {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
+    position: relative;
     width: 40px;
     height: 40px;
     border-radius: 10px;
@@ -465,14 +463,20 @@ button{
 #lyricsbtntoggle svg.hide{
     opacity: 0.6;
 }
+/* listsongstoggle */
+#listsongs svg {
+    width: 22px;
+    height: 22px;
+    fill: #fff;
+    opacity: 1;
+    transition: 0.2s all;
+}
 
 .footersect{
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px;
-    display: none;
+    bottom: 30px;
+    right: 30px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
@@ -620,8 +624,13 @@ button{
     }
     #lyricsbtntoggle{
         position: relative;
-        bottom: 0;
-        right: 0;
+        inset: 0;
+        flex: 1;
+        margin: 0;
+    }
+    #listsongs{
+        position: relative;
+        inset: 0;
         flex: 1;
     }
 }
