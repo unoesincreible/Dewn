@@ -20,7 +20,7 @@ div{
 .bg {
     position: absolute;
     inset: -20%;
-    filter: blur(105px) brightness(0.8);
+    filter: blur(105px) brightness(0.7) saturate(1.3);
 }
 
 .blob{
@@ -94,7 +94,7 @@ div{
 }
 
 .coverr{
-    width: 450px;
+    width: 100%;
     position: relative;
     z-index: 1;
     display: block;
@@ -120,7 +120,7 @@ div{
     align-items: start;
 }
 .lsect{
-    width: 450px;
+    width: 350px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -198,7 +198,7 @@ div{
     font-family: 'inter', sans-serif;
     text-align: center;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 .artist{
     opacity: 0.6;
@@ -222,8 +222,8 @@ div{
 .probar{
     --progress: 0%;
     appearance: none;
-    background: linear-gradient(to right, #fff var(--progress), #ffffff94 var(--progress));
-    height: 3.5px;
+    background: linear-gradient(to right, #ffffffc8 var(--progress), #ffffff5b var(--progress));
+    height: 5px;
     width: 100%;
     cursor: pointer;
     border-radius: 10px;
@@ -234,13 +234,10 @@ div{
     appearance: none;
     width: 12px;
     height: 12px;
-    background: #fff;
+    background: #ffffffc8;
     opacity: 0;
     border-radius: 100%;
     transition: 0.15s all;
-}
-.probar:hover{
-    height: 4.5px;
 }
 .probar:hover::-webkit-slider-thumb{
     opacity: 1;
@@ -276,8 +273,8 @@ button{
     transform: scale(0.7);
 }
 #playy svg{
-    width: 45px;
-    height: 45px;
+    width: 56px;
+    height: 56px; 
     transition: 0.3s all;
 }
 #playy svg path{
@@ -303,10 +300,10 @@ button{
 }
 
 .controlerr{
-    width: 60%;
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 .controlerr button{
     padding: 0;
@@ -317,8 +314,15 @@ button{
     fill: #fff;
 }
 #shuffle svg, #loopbtn svg{
+    margin: 0;
     height: 30px;
     width: 30px;
+}
+#shuffle svg{
+    margin-right: 40px
+}
+#loopbtn svg{
+    margin-left: 40px
 }
 #shuffle svg, #prevbtn svg, #nextbtn svg, #loopbtn svg{
     opacity: 0.8;
@@ -328,18 +332,33 @@ button{
     opacity: 1;
 }
 
+
 .volumesect{
     width: 100%;
     margin-top: 8px;
+    display: none;
+    align-items: center;
+}
+.volumesect2{
+    width: 250px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    background: #ffffff1a;
+    padding: 5px;
+    border-radius: 999px;
+    border-top: 1px solid #ffffff4a;
+    border-bottom: 1px solid #ffffff4a;
 }
 #volume{
     --volumee: 100%;
     appearance: none;
-    background: linear-gradient(to right, #fff var(--volumee), #ffffff94 var(--volumee));
-    height: 3.5px;
-    width: 95%;
+    background: linear-gradient(to right, #ffffffc8 var(--volumee), #ffffff5b var(--volumee));
+    height: 5px;
+    width: 100%;
     cursor: pointer;
     border-radius: 10px;
     outline-style: none;
@@ -349,24 +368,57 @@ button{
     appearance: none;
     width: 12px;
     height: 12px;
-    background: #fff;
+    opacity: 0;
+    background: #ffffffc8;
     border-radius: 100%;
     transition: 0.15s all;
 }
-#volume:hover{
-    height: 4.5px;
+#volume:hover::-webkit-slider-thumb{
+    opacity: 1;
 }
+#volume2{
+    --volumee: 100%;
+    appearance: none;
+    background: linear-gradient(to right, #ffffffc8 var(--volumee), #ffffff5b var(--volumee));
+    height: 5px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    outline-style: none;
+    transition: 0.15s all;
+    z-index: 50;
+}
+#volume2::-webkit-slider-thumb{
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    background: #ffffffc8;
+    border-radius: 100%;
+    transition: 0.15s all;
+}
+#volume2:hover::-webkit-slider-thumb{
+    opacity: 1;
+}
+
 .volumeicon{
-    width: 5%;
+    width: 7.5%;
+    display: flex;
+}
+.volumeicon2{
+    width: 10.5%;
     display: flex;
 }
 .volumeicon svg{
     fill: #fff;
 }
+.volumeicon2 svg{
+    fill: #fff;
+}
 
 .lyricssect {
     width: 80%;
-    height: 600px;
+    height: 550px;
     min-height: 0;
 
     white-space: normal;
@@ -399,6 +451,7 @@ button{
     scrollbar-width: none;
     overscroll-behavior: contain;
     box-sizing: border-box;
+    scroll-behavior: auto;
 }
 
 #lyrics::-webkit-scrollbar {
@@ -411,29 +464,29 @@ button{
     font-weight: 700;
     font-size: 2.1rem;
     opacity: .2;
-    transition: opacity .3s ease;
     margin: 30px 0;
     white-space: normal;
     overflow-wrap: break-word;
     word-break: normal;
     transition:
-    font-size .35s cubic-bezier(.25, .8, .25, 1),
-    opacity .35s ease;
+    font-size 0.5s cubic-bezier(0.61, 0.01, 0.4, 1),
+    opacity 0.5s ease;
     cursor: pointer;
+    filter: blur(1.5px);
 }
 
 #lyrics p.active {
     opacity: 1;
     font-size: 2.2rem;
+    filter: blur(0);
 }
 
 /* lyricsbtntoggle */
 #lyricsbtntoggle {
     position: relative;
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    background-color: #ffffff1a;
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -444,8 +497,8 @@ button{
     background-color: #ffffff2a;
 }
 #lyricsbtntoggle svg {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
     color: #fff;
     opacity: 1;
     transition: 0.2s all;
@@ -461,12 +514,13 @@ button{
     width: 100%;
 }
 #lyricsbtntoggle svg.hide{
-    opacity: 0.6;
+    opacity: 1;
+    background: #ffffff00;
 }
 /* listsongstoggle */
 #listsongs svg {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
     fill: #fff;
     opacity: 1;
     transition: 0.2s all;
@@ -474,11 +528,16 @@ button{
 
 .footersect{
     position: absolute;
-    bottom: 30px;
-    right: 30px;
+    bottom: 20px;
+    right: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #ffffff1a;
+    padding: 5px;
+    border-radius: 999px;
+    border-top: 1px solid #ffffff4a;
+    border-bottom: 1px solid #ffffff4a;
 }
 
 
@@ -530,6 +589,10 @@ button{
         width: 100%;
         height: 30px;
         justify-content: center;
+        display: flex;
+    }
+    .volumesect2{
+        display: none;
     }
     #volume{
         width: 100%;
@@ -621,6 +684,7 @@ button{
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
     }
     #lyricsbtntoggle{
         position: relative;
